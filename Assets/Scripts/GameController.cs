@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
     public static GameController Instance { get { return _instance; } }
 
-    [Tooltip("Should be an odd number")]
+    [Tooltip("Number of rows and columns")]
     public int numRows = 3; //number of rows
     Tile[,] tiles;
 
@@ -100,6 +100,8 @@ public class GameController : MonoBehaviour
         tile[1] = Mathf.Clamp(tile[1], 0, numRows - 1);
         playerTile = tile;
 
-        PlayerController.Instance.gameObject.transform.position = tiles[playerTile[0], playerTile[1]].pos;
+        Transform player = PlayerController.Instance.gameObject.transform;
+
+        StartCoroutine(AnimationController.Instance.MoveTo(player, player.position, tiles[playerTile[0], playerTile[1]].pos, .2f));
     }
 }

@@ -33,11 +33,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Move(Vector3 direction)
-    {
-        //gameObject.transform.position += direction * stepSize;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
