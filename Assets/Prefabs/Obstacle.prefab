@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1049249241605622074}
   - component: {fileID: 1049249241605622075}
+  - component: {fileID: 6145586912541691646}
   m_Layer: 8
   m_Name: Obstacle
   m_TagString: Untagged
@@ -136,4 +137,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  maxSize: 3
   hitMaterial: {fileID: 2100000, guid: a8ba62acb3fb46f4aa265755da6ec999, type: 2}
+--- !u!114 &6145586912541691646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049249241605622072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43300f764e354d642abf0f0dbb612011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  Value:
+    LowFreqAbsorption: 0.1
+    MidFreqAbsorption: 0.2
+    HighFreqAbsorption: 0.3
+    Scattering: 0.05
+    LowFreqTransmission: 0.1
+    MidFreqTransmission: 0.05
+    HighFreqTransmission: 0.03
