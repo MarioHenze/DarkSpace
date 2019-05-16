@@ -812,8 +812,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteoridPrefab: {fileID: 1049249241605622072, guid: d067e3009dca5f147b987c5a51aa09c9,
     type: 3}
-  spwanTimeMin: 0.5
-  spawnTimeMax: 1.5
+  spwanTimeMin: 3
+  spawnTimeMax: 5
   timeToImpact: 3
 --- !u!4 &1536410222
 Transform:
@@ -861,7 +861,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 1
   SpatializePostEffects: 0

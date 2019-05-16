@@ -17,8 +17,8 @@ public class GameController : MonoBehaviour
     [ExecuteInEditMode]
     void OnValidate()
     {
-        //if(numRows % 2 == 0)
-        //numRows += 1;
+        if(numRows % 2 == 0)
+        numRows += 1;
     }
 
     void Awake()
@@ -59,32 +59,33 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            
-            int[] newTile = playerTile;
-            newTile[0] += 1;
+
+            int[] newTile = { 2, 1 };
             MoveTo(newTile);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            int[] newTile = playerTile;
-            newTile[0] -= 1;
+            int[] newTile = { 0, 1 };
             MoveTo(newTile);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
-            int[] newTile = playerTile;
-            newTile[1] -= 1;
+            int[] newTile = { 1, 0 };
             MoveTo(newTile);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
-            int[] newTile = playerTile;
-            newTile[1] += 1;
+            int[] newTile = { 1, 2 };
+            MoveTo(newTile);
+        }
+        else
+        {
+            int[] newTile = { 1, 1 };
             MoveTo(newTile);
         }
     }
