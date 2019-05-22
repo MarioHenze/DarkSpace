@@ -20,6 +20,13 @@ public class MeteoridSpawner : MonoBehaviour
     void OnValidate()
     {
         spawnPoints = new List<SpawnPoint>(spawnPoints.Distinct());
+        //foreach(SpawnPoint sp in spawnPoints)
+        //{
+        //    if(sp.numRows != GameController.Instance.numRows)
+        //    {
+        //        spawnPoints.Remove(sp);
+        //    }
+        //}
     }
 
     float nextMeteorid;

@@ -7,37 +7,52 @@ using UnityEngine;
 public class SpawnPointtEditor : Editor
 {
     SpawnPoint myTarget;
+    int currentNumRows;
+    int currentNumCols;
+
     private void Awake()
     {
         myTarget = (SpawnPoint)target;
-        //myTarget.tiles = new bool[9];
+        currentNumRows = myTarget.numRows;
+        currentNumCols = myTarget.numColumns;
     }
 
     public override void OnInspectorGUI()
     {
-        if (GUI.changed == true)
-            OnValidate();
-
-            EditorGUILayout.LabelField("Select Cells");
         myTarget.numRows = EditorGUILayout.IntField("numRows", myTarget.numRows);
         myTarget.numColumns = EditorGUILayout.IntField("numCols", myTarget.numColumns);
-
-        GUILayoutUtility.GetRect(50, 3 * 30 + 30);
-
-        for (int i = 0; i < 3; i++)
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Select Cells");
+        
+        if (myTarget.numRows != currentNumRows || myTarget.numColumns != currentNumCols)
         {
-            for (int j = 0; j < 3; j++)
+            OnSizeChanged();
+        }
+
+        GUILayoutUtility.GetRect(50, myTarget.numRows * 30 + 30);
+
+        for (int i = 0; i < myTarget.numColumns; i++)
+        {
+            for (int j = 0; j < myTarget.numRows; j++)
             {
-                myTarget.tiles[j * 3 + i] = EditorGUI.Toggle(new Rect(20 + 30 * i, 70 + 30 * j, 20, 20), myTarget.tiles[j * 3 + i]);
+                myTarget.tiles[j * myTarget.numColumns + i] = EditorGUI.Toggle(new Rect(20 + 30 * i, 70 + 30 * j, 20, 20), myTarget.tiles[j * myTarget.numColumns + i]);
             }
         }
     }
 
     [ExecuteInEditMode]
-    void OnValidate()
+    void OnSizeChanged()
     {
-        //Debug.Log("TEST");
-        //tiles = new bool[numRows * numColumns];
+        if (myTarget.numRows < 1)
+            myTarget.numRows = 1;
+
+        if (myTarget.numColumns < 1)
+            myTarget.numColumns = 1;
+
+        currentNumRows = myTarget.numRows;
+        currentNumCols = myTarget.numColumns;
+
+        myTarget.tiles = new bool[currentNumRows * currentNumCols];
     }
 
 }
