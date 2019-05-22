@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MeteoridSpawner : MonoBehaviour
@@ -11,7 +12,15 @@ public class MeteoridSpawner : MonoBehaviour
     [Tooltip("In seconds")]
     public float timeToImpact;
 
-    private enum ObstacleType { Top, Bottom, Left, Right, Mid};
+    //private enum ObstacleType { Top, Bottom, Left, Right, Mid, Around};
+    private enum ObstacleType { Left, Right, Mid, Around };
+    public List<SpawnPoint> spawnPoints;
+
+    [ExecuteInEditMode]
+    void OnValidate()
+    {
+        spawnPoints = new List<SpawnPoint>(spawnPoints.Distinct());
+    }
 
     float nextMeteorid;
     // Start is called before the first frame update
@@ -28,43 +37,16 @@ public class MeteoridSpawner : MonoBehaviour
         // it's time for another obstacle!
         if (nextMeteorid <= 0)
         {
-            switch ((ObstacleType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(ObstacleType)).Length))
+            SpawnPoint sp = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
+            for (int i = 0; i < GameController.Instance.numRows; i++)
             {
-                case ObstacleType.Top:
-                    SpwanObject(new int[] { 0, 0});
-                    SpwanObject(new int[] { 1, 0 });
-                    SpwanObject(new int[] { 2, 0 });
-                    SpwanObject(new int[] { 0, 1 });
-                    SpwanObject(new int[] { 1, 1 });
-                    SpwanObject(new int[] { 2, 1 });
-                    break;
-                case ObstacleType.Bottom:
-                    SpwanObject(new int[] { 0, 2 });
-                    SpwanObject(new int[] { 1, 2 });
-                    SpwanObject(new int[] { 2, 2 });
-                    SpwanObject(new int[] { 0, 1 });
-                    SpwanObject(new int[] { 1, 1 });
-                    SpwanObject(new int[] { 2, 1 });
-                    break;
-                case ObstacleType.Left:
-                    SpwanObject(new int[] { 0, 0 });
-                    SpwanObject(new int[] { 0, 1 });
-                    SpwanObject(new int[] { 0, 2 });
-                    SpwanObject(new int[] { 1, 0 });
-                    SpwanObject(new int[] { 1, 1 });
-                    SpwanObject(new int[] { 1, 2 });
-                    break;
-                case ObstacleType.Right:
-                    SpwanObject(new int[] { 2, 0 });
-                    SpwanObject(new int[] { 2, 1 });
-                    SpwanObject(new int[] { 2, 2 });
-                    SpwanObject(new int[] { 1, 0 });
-                    SpwanObject(new int[] { 1, 1 });
-                    SpwanObject(new int[] { 1, 2 });
-                    break;
-                case ObstacleType.Mid:
-                    SpwanObject(new int[] { 1, 1 });
-                    break;
+                for (int j = 0; j < GameController.Instance.numRows; j++)
+                {
+                    if(sp.tiles[j * 3 + i] == true)
+                    {
+                        SpwanObject(new int[] { i, j });
+                    }
+                }
             }
 
             //int[] index = new int[] { Random.Range(0, GameController.Instance.numRows), Random.Range(0, GameController.Instance.numRows) };

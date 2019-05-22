@@ -814,7 +814,12 @@ MonoBehaviour:
     type: 3}
   spwanTimeMin: 3
   spawnTimeMax: 5
-  timeToImpact: 3
+  timeToImpact: 2
+  spawnPoints:
+  - {fileID: 3276770231110873563, guid: ae3b5011b38e0c24ba0ce0ea40404283, type: 3}
+  - {fileID: 1097909065534379978, guid: c7efdf2d7d50faf48a66d73ac776fa16, type: 3}
+  - {fileID: 3276770231110873563, guid: 1d9a11592f4f59d499e93cb31a0d5ab9, type: 3}
+  - {fileID: 3276770231110873563, guid: b087ca5230575d6419f5e55e4c406275, type: 3}
 --- !u!4 &1536410222
 Transform:
   m_ObjectHideFlags: 0

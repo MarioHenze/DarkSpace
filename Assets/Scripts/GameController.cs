@@ -74,14 +74,14 @@ public class GameController : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            int[] newTile = { 1, 0 };
-            MoveTo(newTile);
+            //int[] newTile = { 1, 0 };
+            //MoveTo(newTile);
         }
 
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            int[] newTile = { 1, 2 };
-            MoveTo(newTile);
+            //int[] newTile = { 1, 2 };
+            //MoveTo(newTile);
         }
         else
         {
