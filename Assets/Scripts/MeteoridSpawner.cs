@@ -19,14 +19,21 @@ public class MeteoridSpawner : MonoBehaviour
     [ExecuteInEditMode]
     void OnValidate()
     {
+        List<SpawnPoint> markedForDeletion = new List<SpawnPoint>();
+
         spawnPoints = new List<SpawnPoint>(spawnPoints.Distinct());
-        //foreach(SpawnPoint sp in spawnPoints)
-        //{
-        //    if(sp.numRows != GameController.Instance.numRows)
-        //    {
-        //        spawnPoints.Remove(sp);
-        //    }
-        //}
+        foreach (SpawnPoint sp in spawnPoints)
+        {
+            if (sp.numRows != GameObject.FindObjectOfType<GameController>().numRows)
+            {
+                markedForDeletion.Add(sp);
+            }
+        }
+
+        foreach(SpawnPoint sp in markedForDeletion)
+        {
+            spawnPoints.Remove(sp);
+        }
     }
 
     float nextMeteorid;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1097909065534379979}
   - component: {fileID: 1097909065534379978}
   m_Layer: 0
-  m_Name: SPLeft
+  m_Name: SP_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25bb8bb29b5b0e44b2154558beb18a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numRows: 3
+  numColumns: 3
+  tiles: 010100010100010100

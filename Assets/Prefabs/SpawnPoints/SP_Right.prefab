@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3276770231110873560}
   - component: {fileID: 3276770231110873563}
   m_Layer: 0
-  m_Name: SPRight
+  m_Name: SP_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25bb8bb29b5b0e44b2154558beb18a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numRows: 3
+  numColumns: 3
+  tiles: 000101000101000101

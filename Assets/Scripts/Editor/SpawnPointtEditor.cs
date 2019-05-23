@@ -29,18 +29,21 @@ public class SpawnPointtEditor : Editor
             OnSizeChanged();
         }
 
-        GUILayoutUtility.GetRect(50, myTarget.numRows * 30 + 30);
+        GUILayoutUtility.GetRect(50, myTarget.numRows * 50 + 30);
 
         for (int i = 0; i < myTarget.numColumns; i++)
         {
             for (int j = 0; j < myTarget.numRows; j++)
             {
-                myTarget.tiles[j * myTarget.numColumns + i] = EditorGUI.Toggle(new Rect(20 + 30 * i, 70 + 30 * j, 20, 20), myTarget.tiles[j * myTarget.numColumns + i]);
+                //myTarget.tiles[j * myTarget.numColumns + i] = EditorGUI.Toggle(new Rect(20 + 30 * i, 70 + 30 * j, 20, 20), myTarget.tiles[j * myTarget.numColumns + i]);
+                if(GUI.Button(new Rect(20 + 50 * i, 70 + 50 * j, 50, 50), myTarget.tiles[j * myTarget.numColumns + i] ? "X" : ""))
+                {
+                    OnButtonToggle(i,j);
+                }
             }
         }
     }
 
-    [ExecuteInEditMode]
     void OnSizeChanged()
     {
         if (myTarget.numRows < 1)
@@ -53,6 +56,14 @@ public class SpawnPointtEditor : Editor
         currentNumCols = myTarget.numColumns;
 
         myTarget.tiles = new bool[currentNumRows * currentNumCols];
+
+        EditorUtility.SetDirty(myTarget);
+    }
+
+    void OnButtonToggle(int x , int y)
+    {
+        myTarget.tiles[y * myTarget.numColumns + x] = !myTarget.tiles[y * myTarget.numColumns + x];
+        EditorUtility.SetDirty(myTarget);
     }
 
 }
