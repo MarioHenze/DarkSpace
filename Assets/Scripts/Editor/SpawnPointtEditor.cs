@@ -44,6 +44,7 @@ public class SpawnPointtEditor : Editor
         }
     }
 
+    [ExecuteInEditMode]
     void OnSizeChanged()
     {
         if (myTarget.numRows < 1)
@@ -60,6 +61,7 @@ public class SpawnPointtEditor : Editor
         EditorUtility.SetDirty(myTarget);
     }
 
+    [ExecuteInEditMode]
     void OnButtonToggle(int x , int y)
     {
         myTarget.tiles[y * myTarget.numColumns + x] = !myTarget.tiles[y * myTarget.numColumns + x];

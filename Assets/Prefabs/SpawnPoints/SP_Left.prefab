@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numRows: 3
   numColumns: 3
-  tiles: 010100010100010100
+  tiles: 000000010100000000
