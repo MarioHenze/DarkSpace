@@ -1,0 +1,36 @@
+#N canvas 1844 479 1453 982 10;
+#X obj 111 318 dac~;
+#X obj 87 122 *~;
+#X floatatom 88 53 5 0 0 0 - - -;
+#X floatatom 124 63 5 0 100 0 - - -;
+#X obj 124 96 dbtorms;
+#X obj 117 186 *~;
+#X obj 185 177 osc~;
+#X obj 246 151 hsl 128 15 0 30 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 750 1;
+#X obj 117 240 expr~ (tanh($v1 * $f2) / $f2);
+#X obj 188 81 osc~;
+#X floatatom 184 49 5 0 0 0 - - -;
+#X obj 87 87 osc~;
+#X obj 122 146 +~;
+#X obj 187 118 *~;
+#X obj 317 208 hsl 128 15 1.27 127 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 6350 1;
+#X obj 247 80 hsl 128 15 0.0001 10 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 6550 1;
+#X connect 1 0 12 0;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 6 0;
+#X connect 8 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 1 0;
+#X connect 12 0 5 0;
+#X connect 13 0 12 1;
+#X connect 14 0 8 1;
+#X connect 15 0 13 1;
