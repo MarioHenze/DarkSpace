@@ -1,0 +1,1 @@
+DECLARE_EFFECT("piepton", Hv_piepton_UnityPlugin)
