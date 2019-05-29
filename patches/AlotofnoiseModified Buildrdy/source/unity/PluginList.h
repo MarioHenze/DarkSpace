@@ -1,0 +1,1 @@
+DECLARE_EFFECT("alotofnoise", Hv_alotofnoise_UnityPlugin)
