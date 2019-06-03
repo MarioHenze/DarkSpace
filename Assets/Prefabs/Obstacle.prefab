@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 6145586912541691646}
   - component: {fileID: 672391892432486174}
   - component: {fileID: 316249900083842461}
-  - component: {fileID: -3980700756838681149}
-  - component: {fileID: -710490128263750628}
+  - component: {fileID: 3310597967133736244}
+  - component: {fileID: 7392602550488946718}
   m_Layer: 8
   m_Name: Obstacle
   m_TagString: Untagged
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049249241605622072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.181, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1049249240671570872}
@@ -275,7 +275,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-3980700756838681149
+--- !u!114 &3310597967133736244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,7 +293,7 @@ MonoBehaviour:
   soundBar: 1
   tonOne: 50
   tonTwo: 40
---- !u!114 &-710490128263750628
+--- !u!114 &7392602550488946718
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,4 +306,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obst: {fileID: 1049249241605622072}
-  test: {fileID: -3980700756838681149}
+  test: {fileID: 3310597967133736244}
