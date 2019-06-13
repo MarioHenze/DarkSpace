@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_include_patterns": ["*.tex", "*.tikz"]
+		},
+	],
+
+	"settings": {
+		"TEXroot": "documentation.tex"
+	}
+}

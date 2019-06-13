@@ -1,0 +1,23 @@
+\def\r{1.5}
+\tdplotsetmaincoords{60}{125}
+\begin{tikzpicture}[tdplot_main_coords]
+	\begin{scope}[thin, black!30]
+		\draw[->] (-1.3 * \r,0,0) -- (1.3 * \r,0,0) node[anchor=north east]{$x$};
+		\draw[->] (0,-1.3 * \r,0) -- (0,1.3 * \r,0) node[anchor=north west]{$y$};
+		\draw[->] (0,0,-1.3 * \r) -- (0,0,1.3 * \r) node[anchor=south]{$z$};
+	\end{scope}
+
+	\tdplotCsDrawLatCircle{\r}{0}
+	\tdplotCsDrawLonCircle{\r}{0}
+	\tdplotCsDrawCircle{\r}{90}{90}{0}
+
+	\draw ({sin(45) * -\r}, {sin(45) * \r}, 0) --
+		({(sin(45) * -\r) * 1.2}, {(sin(45) * \r) * 1.2}, 0)
+		node[anchor=west] {Horizontalebene};
+	\draw ({sin(45) * -\r}, 0, {sin(45) * \r}) --
+		({(sin(45) * -\r) * 1.2}, 0, {(sin(45) * \r) * 1.2})
+		node[anchor=west] {Frontalebene};
+	\draw (0, {sin(180 + 45) * -\r}, {sin(180 + 45) * \r}) --
+		(0, {(sin(180 + 45) * -\r) * 1.2}, {(sin(180 + 45) * \r) * 1.2})
+		node[anchor=west] {Medianebene};
+\end{tikzpicture}

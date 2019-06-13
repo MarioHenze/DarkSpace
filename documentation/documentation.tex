@@ -1,0 +1,98 @@
+\documentclass[a4paper, 11pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman, english]{babel}
+
+\usepackage{tikz,tikz-3dplot-circleofsphere}
+
+\begin{document}
+
+\section{Psychoakustische Grundlagen}
+\label{sec:psychoakustische_grundlagen}
+
+\subsection{Frequenz}
+\label{sub:frequenz}
+
+Die Frequenz ist ein Maß wie oft sich der Schalldruck pro Sekunde ändert und
+wird in Hertz gemessen. Sie korreliert mit der wahrgenommen Tonhöhe eines
+Audiosignals.
+
+\subsection{Amplitude}
+\label{sub:Amplitude}
+
+Die Amplitude gibt die absolute Differenz zwischen Maximal- und Normaldruck an
+und korreliert mit der wahrgenommen Lautstärke eines Audiosignals.
+
+\subsection{Binaurales Hören}
+\label{sub:binaurales_hoeren}
+
+\begin{figure}
+\centering
+\input{figures/binaural.tikz}
+
+\caption{Die drei Ebenen des binaural Hörens unter der Voraussetzung, dass der 
+Blick in y-Richtung verläuft und die Ohren auf der x-Achse liegen.}
+
+\label{fig:spatilisation}
+\end{figure}
+
+Um den Effekt einer richtungsabhängigen Wahrnehmung eines Schallereignisses zu
+erreichen, können Laufzeit- und Pegeldifferenzen genutzt werden. Aus dem
+Unterschied zwischen beiden Ohren kann das Gehirn das Hörereignis auf der
+Horizontalebene lokalisieren. Durch Nutzung der blauertschen Bänder ist es
+außerdem möglich auf der Medianebene zu lokalisieren.
+
+\subsection{Schwankungsstärke}
+\label{sub:schwankungsstaerke}
+
+Die Schwankungsstärke gibt die empfundene Schwankung in der Lautstärke eines
+Audiosignals an und wird in vacil gemessen.
+
+\subsection{Rauigkeit}
+\label{sub:rauigkeit}
+
+Die Rauigkeit misst die empfundene Rauigkeit im Timbre eines Audiosignals und
+wird in asper angegeben.
+
+\subsection{Schärfe}
+\label{sub:schaerfe}
+
+Die Schärfe eines Audiosignals bezeichnet das wahrgenomme Verhältnis von hohen
+zu tiefen Frequenzen und wird in acum gemessen.
+
+\subsection{Tonhaltigkeit}
+\label{sub:tonhaltigkeit}
+
+Die Tonhaltigkeit ist ein Maß um die Wahrnehmbarkeit von Einzeltönen im Spektrum
+eines Audiosignals anzugeben und wird in Aures gemessen.
+
+\section{Audiomodell}
+\label{sec:audiomodell}
+
+Damit der Spieler mit der Spielwelt interagieren kann, muss ein bidirektionaler
+Austausch zwischen Spieler und Spiel entstehen. Da im Rahmen der Projektarbeit
+die Bedingung gesetzt wurde, Menschen mit Sehbehinderung als Zielgruppe zu
+wählen, fällt der visuelle Austausch von Information aus. Die Herausforderung
+besteht somit, relevante Information der Spielmechanik zu bestimmen und diese in
+geeigneter Weise auf akustische Cues zu transformieren. Die im
+Kapitel~\ref{sec:psychoakustische_grundlagen} vorgestellten Parameter bilden
+hierfür einen Beschreibungsraum von Geräuschen, welche die Information der
+Spielmechanik an den Spieler mitteilen.
+
+Bei der direkten Übersetzung von räumlicher Position auf binaurales Hören
+mithilfe von Pegel- und Laufzeitunterschieden fällt die geringe Auflösung der
+Wahrnehmung auf. So sind ausschließlich qualitative Urteile wie „mittig“,
+„rechts“ oder „schräg rechts“ möglich. Folglich können räumliche Informationen
+aus der Spielmechanik nicht direkt durch binaurales Hören kodiert werden,
+sondern müssen durch Parameter mit höherer Sensibilität kommuniziert werden.
+Durch die multimodale Wahrnehmung können Pegel- und Laufzeitunterschiede jedoch
+als unterstüzender Akustik-Cue verwendet werden. Das heißt die räumlichen
+Informationen werden sowohl mit distinktem Parameter als auch mit binauralem
+Hören kodiert. Durch diese Redundanz sollten räumliche Information deutlich
+präziser und schneller wahrgenommen werden können.
+
+\section{Spielmechanik}
+\label{sec:spielmechanik}
+
+\end{document}
