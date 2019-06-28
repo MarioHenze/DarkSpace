@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decayTime: 1
-  metro: 500
+  metro: 4
   resonacne: 1
   soundBar: 1
   tonOne: 50
@@ -305,5 +305,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bad8d265f1b24b6fa6851ddac739f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obst: {fileID: 1049249241605622072}
   test: {fileID: 3310597967133736244}
+  zPosToAudio: 166169536
