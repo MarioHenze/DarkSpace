@@ -1,0 +1,100 @@
+\documentclass{beamer}
+
+\usepackage[ngerman]{babel}
+
+\usepackage{
+adjustbox,
+tikz,
+tikzsymbols,
+pgfplots,
+physics,
+siunitx,
+xcolor
+}
+
+\pgfplotsset{compat=newest}
+
+\title{Virtual Reality:\\Spielen ohne Grafik?}
+
+\date{09.07.2019}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Spielkonzeption}
+
+\begin{adjustbox}{max totalsize={.9\textwidth}{.7\textheight}, center}
+\begin{tikzpicture}
+%ground
+\draw (-5, -0.5) -- (5, -0.5);
+%guy
+\node at (-5, 0) {\Strichmaxerl[2]};
+%running direction
+\draw [->, very thick] (-4, 0) -- (-3, 0);
+%first obstacle
+\draw (1,0) circle [radius = 10pt];
+\draw [->] (.5, 0) -- (.2, 0);
+\node at (1, 1) {\Strichmaxerl[2]};
+\draw [->, very thick] (-.5, 0) .. controls (0, 1) .. (.5, 1);
+\draw [->, very thick] (1.5, 1) .. controls (2, 1) .. (2.5, 0);
+%second obstacle
+\draw (4,.5) circle [radius = 10pt];
+\draw [->] (3.5, .5) -- (3.2, .5);
+\node at (5, 0) {\Strichmaxerl[2]};
+\draw [->, very thick] (3.5, 0) .. controls (4, -.2) .. (4.5, 0);
+\end{tikzpicture}
+\end{adjustbox}
+
+\begin{itemize}
+	\item "`Autorunner"'
+	\item kompakte Spielmechanik
+	\item endloses Level
+	\item Geschwindigkeit nimmt kontinuierlich zu
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformation zur Akustik/Haptik}
+
+\begin{itemize}
+	\item visuelle Information reduzierbar
+	\begin{itemize}
+		\item Hindernis auf direkter Kollision \( \Rightarrow \) Springen
+		\item Platz unter Hindernis \( \Rightarrow \) Ducken
+	\end{itemize}
+
+	\item Kodierung der Information durch Akustik und Haptik
+	\begin{itemize}
+		\item Position durch Amplitude
+		\item Höhe durch Frequenz
+		\item Spielerposition durch weitere Modulation?
+	\end{itemize}
+
+	\item Psychoakustische Untersuchung im Sound-Design
+	\begin{itemize}
+		\item akustische Verdeckung bei zu vielen Hindernissen?
+		\item welche Modulationen fördern/hindern "`Übersichtlichkeit"'
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fragestellung}
+\begin{itemize}
+	\item Können visuelle Informationen eines Spiels allein durch akustische und
+	haptische Reize ersetzt werden?
+	\begin{itemize}
+		\item Metrik lässt sich an Mechanik ableiten
+		\item Wie lange überlebt Spieler mit und ohne visuelle Reize
+		\item Highscore
+		\item Präzision von Bewegungen?
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
