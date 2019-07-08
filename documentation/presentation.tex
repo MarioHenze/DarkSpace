@@ -34,8 +34,8 @@ xcolor
 \end{adjustbox}
 
 \begin{itemize}
-	\item drei feste Positionen
-	\item Hindernisse fliegen von hinten auf Spieler zu
+	\item Drei feste Positionen
+	\item Hindernisse fliegen aus Distanz auf Spieler zu
 	\item Figur bleibt ohne Eingabe in mittlerer Position
 	\item Interaktion durch Ausweichen nach links oder rechts
 \end{itemize}
@@ -48,14 +48,14 @@ xcolor
 \begin{columns}
 	\column{0.46\linewidth}
 	\begin{itemize}
-		\item primär
+		\item Primär
 		\begin{itemize}
 			\item Frequenzmodulation
 			\item Amplitudenmodulation
-			\item binaurales Hören
+			\item Binaurales Hören
 		\end{itemize}
 
-		\item sekundär
+		\item Sekundär
 		\begin{itemize}
 			\item Schwankungsstärke
 			\item Rauigkeit
@@ -69,26 +69,63 @@ xcolor
 \end{frame}
 
 \begin{frame}
-\frametitle{akustische Kodierung}
+\frametitle{Akustische Kodierung}
+\begin{itemize}
+	\item Hindernis horizontale Position als Frequenz
+	\item frontaler Hindernisabstand durch Amplitude und Impulslänge
+	\item ??
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformationsprobleme}
 \begin{itemize}
 	\item Auflösung binauralen Hörens für kontinuierliche Merkmale zu gering
 	\begin{itemize}
 		\item Ausschließlich qualitative Merkmale möglich (z.B. mittig oder rechts)
 	\end{itemize}
-	\item Sekundäre Merkmale werden durch primäre erzeugt
+	\item Sekundäre Merkmale werden durch Primäre erzeugt
 	\item Nur Frequenz und Amplitude für Position und Entfernung geeignet
 \end{itemize}
 \end{frame}
 
-
+\begin{frame}
+\frametitle{Transformationsprobleme}
+\begin{itemize}
+	\item relative Position des Spielers und absolute Position der Hindernisse
+	\begin{itemize}
+		\item umgangen durch Mittenposition bei fehlender Eingabe
+	\end{itemize}
+	\item bei steigender Hindernissanzahl ist Beschreibungsraum schnell
+	erschöpft
+	\begin{itemize}
+		\item mehrere Stimuli werden nicht mehr distinkt wahrgenommen
+		\item psychoakustische Verdeckung tritt auf
+	\end{itemize}
+	\item interaktives Lernen der Spielmechanik ("`Tutorial"') unmöglich
+\end{itemize}
+\end{frame}
 
 \begin{frame}
-	\frametitle{Fazit}
-	\begin{itemize}
-		\item Informationsübermittlung stößt schnell an Grenzen
-		\item komplexe Szenen führen zu aliasing zwischen primären und sekundären Merkmalen
-		\item 
-	\end{itemize}
+\frametitle{Heavy Audio Compiler}
+\begin{itemize}
+	\item ?? Andere Ansätze getestet (pure data plugins in unity)
+	\item hvcc von Enzien Audio entwickelt und unter GPL3 auf github 
+	veröffentlicht
+	\item Generiert aus PureData Patches C-Quellcode
+	\item Dieser kann als dynamische Bibliothek gebaut werden
+	\item Kombiniert Vorteile von einfachem Audio Design mit Pure Data und 
+	hoher Performance durch Übersetzung in Maschinencode
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unity Projekt Aufbau}
+\begin{itemize}
+	\item Steam Audio für binaurales Hören
+	\item ?? Klassen / Skript Übersicht
+	\item ?? Modularität als "`als Experimentierbaukasten erklären"'
+\end{itemize}
 \end{frame}
 
 \end{document}
