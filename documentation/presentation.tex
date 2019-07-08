@@ -1,0 +1,94 @@
+\documentclass{beamer}
+
+\usepackage[ngerman]{babel}
+
+\usepackage{
+adjustbox,
+tikz,
+tikzsymbols,
+pgfplots,
+physics,
+siunitx,
+xcolor
+}
+
+\usepackage{tikz-3dplot-circleofsphere}
+
+\pgfplotsset{compat=newest}
+
+\title{Virtual Reality:\\Spielen ohne Grafik?}
+
+\date{09.07.2019}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Spielkonzeption}
+
+\begin{adjustbox}{max totalsize={.9\textwidth}{.7\textheight}, center}
+\input{figures/game.tikz}
+\end{adjustbox}
+
+\begin{itemize}
+	\item drei feste Positionen
+	\item Hindernisse fliegen von hinten auf Spieler zu
+	\item Figur bleibt ohne Eingabe in mittlerer Position
+	\item Interaktion durch Ausweichen nach links oder rechts
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Psychoakustischer Beschreibungsraum}
+
+\begin{columns}
+	\column{0.46\linewidth}
+	\begin{itemize}
+		\item primär
+		\begin{itemize}
+			\item Frequenzmodulation
+			\item Amplitudenmodulation
+			\item binaurales Hören
+		\end{itemize}
+
+		\item sekundär
+		\begin{itemize}
+			\item Schwankungsstärke
+			\item Rauigkeit
+			\item Schärfe
+			\item Tonhaltigkeit
+		\end{itemize}
+	\end{itemize}
+	\column{0.54\linewidth}
+	\input{figures/binaural.tikz}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{akustische Kodierung}
+\begin{itemize}
+	\item Auflösung binauralen Hörens für kontinuierliche Merkmale zu gering
+	\begin{itemize}
+		\item Ausschließlich qualitative Merkmale möglich (z.B. mittig oder rechts)
+	\end{itemize}
+	\item Sekundäre Merkmale werden durch primäre erzeugt
+	\item Nur Frequenz und Amplitude für Position und Entfernung geeignet
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Fazit}
+	\begin{itemize}
+		\item Informationsübermittlung stößt schnell an Grenzen
+		\item komplexe Szenen führen zu aliasing zwischen primären und sekundären Merkmalen
+		\item 
+	\end{itemize}
+\end{frame}
+
+\end{document}
