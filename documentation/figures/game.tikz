@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+%ground
+\draw (-0.2, -.2) -- (2.2, -.2);
+\draw (2.8, -.2) -- (5.2, -.2);
+\draw (5.8, -.2) -- (8.2, -.2);
+
+%cells
+\draw (0, 0) rectangle (2, 2);
+\fill[gray](3, 0) rectangle (5, 2);
+\draw (6, 0) rectangle (8, 2);
+
+%guy
+\node at (1, 1) {\Strichmaxerl[2]};
+\end{tikzpicture}

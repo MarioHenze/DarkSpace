@@ -12,6 +12,8 @@ siunitx,
 xcolor
 }
 
+\usepackage{tikz-3dplot-circleofsphere}
+
 \pgfplotsset{compat=newest}
 
 \title{Virtual Reality:\\Spielen ohne Grafik?}
@@ -28,66 +30,49 @@ xcolor
 \frametitle{Spielkonzeption}
 
 \begin{adjustbox}{max totalsize={.9\textwidth}{.7\textheight}, center}
-\begin{tikzpicture}
-%ground
-\draw (-5, -0.5) -- (5, -0.5);
-%guy
-\node at (-5, 0) {\Strichmaxerl[2]};
-%running direction
-\draw [->, very thick] (-4, 0) -- (-3, 0);
-%first obstacle
-\draw (1,0) circle [radius = 10pt];
-\draw [->] (.5, 0) -- (.2, 0);
-\node at (1, 1) {\Strichmaxerl[2]};
-\draw [->, very thick] (-.5, 0) .. controls (0, 1) .. (.5, 1);
-\draw [->, very thick] (1.5, 1) .. controls (2, 1) .. (2.5, 0);
-%second obstacle
-\draw (4,.5) circle [radius = 10pt];
-\draw [->] (3.5, .5) -- (3.2, .5);
-\node at (5, 0) {\Strichmaxerl[2]};
-\draw [->, very thick] (3.5, 0) .. controls (4, -.2) .. (4.5, 0);
-\end{tikzpicture}
+\input{figures/game.tikz}
 \end{adjustbox}
 
 \begin{itemize}
-	\item "`Autorunner"'
-	\item kompakte Spielmechanik
-	\item endloses Level
-	\item Geschwindigkeit nimmt kontinuierlich zu
+	\item drei feste Positionen
+	\item Hindernisse fliegen von hinten auf Spieler zu
+	\item Figur bleibt ohne Eingabe in mittlerer Position
+	\item Interaktion durch Ausweichen nach links oder rechts
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Transformation zur Akustik/Haptik}
+\frametitle{Psychoakustischer Beschreibungsraum}
 
-\begin{itemize}
-	\item visuelle Information reduzierbar
+\begin{columns}
+	\column{0.46\linewidth}
 	\begin{itemize}
-		\item Hindernis auf direkter Kollision \( \Rightarrow \) Springen
-		\item Platz unter Hindernis \( \Rightarrow \) Ducken
-	\end{itemize}
+		\item primär
+		\begin{itemize}
+			\item Frequenzmodulation
+			\item Amplitudenmodulation
+			\item binaurales Hören
+		\end{itemize}
 
-	\item Kodierung der Information durch Akustik und Haptik
-	\begin{itemize}
-		\item Position durch Amplitude
-		\item Höhe durch Frequenz
-		\item Spielerposition durch weitere Modulation?
+		\item sekundär
+		\begin{itemize}
+			\item Schwankungsstärke
+			\item Rauigkeit
+			\item Schärfe
+			\item Tonhaltigkeit
+		\end{itemize}
 	\end{itemize}
-
-	\item Psychoakustische Untersuchung im Sound-Design
-	\begin{itemize}
-		\item akustische Verdeckung bei zu vielen Hindernissen?
-		\item welche Modulationen fördern/hindern "`Übersichtlichkeit"'
-	\end{itemize}
-\end{itemize}
+	\column{0.54\linewidth}
+	\input{figures/binaural.tikz}
+\end{columns}
 \end{frame}
 
 \begin{frame}
-\frametitle{Fragestellung}
+\frametitle{akustische Kodierung}
 \begin{itemize}
-	\item Können visuelle Informationen eines Spiels allein durch akustische und
-	haptische Reize ersetzt werden?
+	\item Auflösung für kontinuierliche Merkmale oft zu gering
+	\item Ausschließlich qualitative Merkmale möglich (z.B. mittig oder rechts)
 	\begin{itemize}
 		\item Metrik lässt sich an Mechanik ableiten
 		\item Wie lange überlebt Spieler mit und ohne visuelle Reize
