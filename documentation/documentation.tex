@@ -8,24 +8,27 @@
 
 \begin{document}
 
+\section{Einleitung}
+\label{sec:einleitung}
+
+Die vorliegende Arbeit befasst sich mit der Frage ob Spiele, die auf akustische
+Reize reduziert worden sind, weiterhin funktionieren. So ist es für Menschen mit
+Sehbehinderung unmöglich klassische audiovisuelle Spiele zu erleben. Diese legen
+den Fokus stark auf visuelle Reize, um Informationen wie Spielerposition und
+Interaktionsmöglichkeiten zu vermitteln. Dabei entsteht aber die Frage, ob durch
+sorgfältiges Audiodesign es möglich ist, dem Spieler eine ähnliche Immersion ins
+Spiel zu ermöglichen.
+
 \section{Psychoakustische Grundlagen}
 \label{sec:psychoakustische_grundlagen}
 
-\subsection{Frequenz}
-\label{sub:frequenz}
-
-Die Frequenz ist ein Maß wie oft sich der Schalldruck pro Sekunde ändert und
-wird in Hertz gemessen. Sie korreliert mit der wahrgenommen Tonhöhe eines
-Audiosignals.
-
-\subsection{Amplitude}
-\label{sub:Amplitude}
-
-Die Amplitude gibt die absolute Differenz zwischen Maximal- und Normaldruck an
-und korreliert mit der wahrgenommen Lautstärke eines Audiosignals.
-
-\subsection{Binaurales Hören}
-\label{sub:binaurales_hoeren}
+Um der Analogie zwischen visuellem und akustischem Informationsaustausch zu
+entsprechen, müssen Sound-Design Parameter gefunden werden, welche dies
+zulassen. So werden veränderliche Positionen im dreidimensionalen Raum
+klassischerweise auf Koordinaten in der Bildebene projiziert. Weitere Zustände
+von Interaktionsobjekten in der Szene, werden meist durch Farben und Posen
+vermittelt. Die folgenden akustischen Parameter eines Geräusches sollen als
+Zielbereich dieser Transformation dienen.
 
 \begin{figure}
 \centering
@@ -37,35 +40,30 @@ Blick in y-Richtung verläuft und die Ohren auf der x-Achse liegen.}
 \label{fig:spatilisation}
 \end{figure}
 
-Um den Effekt einer richtungsabhängigen Wahrnehmung eines Schallereignisses zu
-erreichen, können Laufzeit- und Pegeldifferenzen genutzt werden. Aus dem
-Unterschied zwischen beiden Ohren kann das Gehirn das Hörereignis auf der
-Horizontalebene lokalisieren. Durch Nutzung der blauertschen Bänder ist es
-außerdem möglich auf der Medianebene zu lokalisieren.
-
-\subsection{Schwankungsstärke}
-\label{sub:schwankungsstaerke}
-
-Die Schwankungsstärke gibt die empfundene Schwankung in der Lautstärke eines
-Audiosignals an und wird in vacil gemessen.
-
-\subsection{Rauigkeit}
-\label{sub:rauigkeit}
-
-Die Rauigkeit misst die empfundene Rauigkeit im Timbre eines Audiosignals und
-wird in asper angegeben.
-
-\subsection{Schärfe}
-\label{sub:schaerfe}
-
-Die Schärfe eines Audiosignals bezeichnet das wahrgenomme Verhältnis von hohen
-zu tiefen Frequenzen und wird in acum gemessen.
-
-\subsection{Tonhaltigkeit}
-\label{sub:tonhaltigkeit}
-
-Die Tonhaltigkeit ist ein Maß um die Wahrnehmbarkeit von Einzeltönen im Spektrum
-eines Audiosignals anzugeben und wird in Aures gemessen.
+\begin{description}
+	\item[Frequenz]	Die Frequenz ist ein Maß wie oft sich der Schalldruck pro
+		Sekunde ändert und wird in Hertz gemessen. Sie korreliert mit der
+		wahrgenommen Tonhöhe eines Audiosignals.
+	\item[Amplitude]  Die Amplitude gibt die absolute Differenz zwischen
+		Maximal- und Normaldruck an und korreliert mit der wahrgenommen
+		Lautstärke eines Audiosignals.
+	\item[binaurales Hören] Um den Effekt einer richtungsabhängigen Wahrnehmung
+		eines Schallereignisses zu erreichen, können Laufzeit- und
+		Pegeldifferenzen genutzt werden. Aus dem Unterschied zwischen beiden
+		Ohren kann das Gehirn das Hörereignis auf der Horizontalebene
+		lokalisieren. Durch Nutzung der blauertschen Bänder ist es außerdem
+		möglich auf der Medianebene zu lokalisieren.
+	\item[Schwankungsstärke] Die Schwankungsstärke gibt die empfundene
+		Schwankung in der Lautstärke eines Audiosignals an und wird in vacil
+		gemessen.
+	\item[Rauigkeit] Die Rauigkeit misst die empfundene Rauigkeit im Timbre
+		eines Audiosignals und wird in asper angegeben.
+	\item[Schärfe] Die Schärfe eines Audiosignals bezeichnet das wahrgenomme
+		Verhältnis von hohen zu tiefen Frequenzen und wird in acum gemessen.
+	\item[Tonhaltigkeit] Die Tonhaltigkeit ist ein Maß um die Wahrnehmbarkeit
+		von Einzeltönen im Spektrum eines Audiosignals anzugeben und wird in
+		Aures gemessen.
+\end{description}
 
 \section{Audiomodell}
 \label{sec:audiomodell}
