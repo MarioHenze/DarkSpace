@@ -23,7 +23,7 @@ public class ObstcaleScript : MonoBehaviour
         float lerp = Mathf.Lerp(1, maxSize, interpolation);
         transform.localScale = new Vector3(lerp, lerp, 1);
 
-        if(transform.position.z < 0)
+        if (transform.position.z < 0)
         {
             GameObject.Destroy(gameObject);
 
