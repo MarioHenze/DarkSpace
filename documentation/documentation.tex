@@ -95,6 +95,31 @@ präziser und schneller wahrgenommen werden können.
 \section{Spielmechanik}
 \label{sec:spielmechanik}
 
+\section{Pura Data}
+\label{sec:Pure Data}
+
+Pure Data ist eine Programmiersprache und Entwicklungsumgebung, die meist zur Erstellung von interaktiven Multimedia-Software genutzt wird. Sie ist eine datenstormorientierte, visuelle Programmiersprache und ist Open-Source, damit kostenlos nutzbar.
+
+Ein Programm in Pure Data nennt man Patch, welcher das Zusammenspiel verschiedener Objekte und ihrer Datenströme beschreibt. Datenströme können erzeugt, manipuliert und ausgegeben werden. Die Ausgabe kann grafisch und/oder auditiv über ein Audiosignal ausgegeben werden.  
+
+Die kleinsten Programmiereinheiten, Objekte genannt, werden grafisch dargestellt. Diese Objekte können Objekte, Messages, Zahlen usw. darstellen. Pure Data biete eine Vielzahl an Objekten, welche in der Dokumentation aufgeführt sind. Man unterscheidet grundsätzlich zwischen 3 Objekttypen: Quellen, Knoten, Senken. Quellen können dabei Mikrofone, Sinus-Generatoren oder Netzwerke sein. Um den von einer Quelle erzeugten Datenstrom zu manipulieren, nutzt man Knoten. Diese verändern die Datenströme unter anderem durch Addition mehrerer Datenströme, Verzerrung durch Wurzelziehen oder anderer mathematischer Operationen. Das erzeugte Audiosignal kann durch Senken ausgegeben werden. Durch Verbinden von Ein- und Ausgängen der Objekte entsteht ein Datenstrom. Verbindungen zwischen Objekten werden durch Linien angezeigt, welche mit der Maus gezogen werden. 
+Im Projekt „Dark Space“ nutzen wir Pure Data zum Erstellen des Audiosignales für die räumliche Positionierung der Objekte im Raum. Die Patches sind die Übersetzung von räumlichen Positionen auf binaurales Hören mit distinkten Parametern. 
+
+\section{Audio - Plugin}
+\label{sec:Audio - Plugin}
+
+Zum Erstellen des Spieles nutzen wir Unity. Es handelt sich dabei um eine Spiele–Engin, welche Laufzeit- und Entwicklungsumgebung zugleich ist. Um in Unity einen Pure Data-Patch nutzen zu können, benötigen wir einen Audio-Plugin. Ein Plugin ist eine Software-Erweiterung oder ein Zusatzmodul, welches optional ist und die Software erweitert oder verändert. 
+Wir nutzen die Heavy Compiler Collection (hvcc) von Enzien Audio zum Erstellen unseres Audio Plugins. 
+Hvcc ist ein Python basierter Datenfluss-Audio-Programmiersprachen-Compiler, der C/C++-Code und eine Vielzahl von spezifischen Framework-Wrappern generiert. Er steht unter der GNU General Public License. Auf der Enzien Website sind alle Objekte zu finden, die unterstützt werden. 
+
+Um Hvcc nutzen zu können, benötigt man Python 2.7 und 3 Packages. Sobald diese installiert und eingebunden sind, kann der Compiler genutzt werden. Der zu kompilierende Pure Data Patch muss in „_main.pd“ umbenannt werden. Die Eingänge der zu nutzenden Objekte müssen mit einem Parameter-Objekt verbunden sein. Das Parameter-Objekt ist wie Folgt aufgebaut: „r x @hv_param zahlMin zahlMax zahlDefault“. Das „x“ steht für einen freiwählbaren Namen des Parameters. Mit „@hv_param“ erkennt der Compiler, dass es sich um einen Parameter handelt. Die Zahlen am Schluss geben den Minimal-, Maximal- und den Defaultwert an. Der Defaultwert gibt den Startwert des Parameters vor und ist optional, ohne Angabe des Wertes wird der Minimalwert genutzt. 
+
+Der Befehl „python2.7 hvcc.py ~/myProject/_main.pd -o ~/Desktop/somewhere/else/ -n mySynth -g unity wwise js“ ruft das Skript auf. Die Optionen „-o“, „-n“ und „-g“ geben dem Skript genauere Anweisungen wie Ausgabeort und Name. 
+„-o“ gibt den Ausgabeort an und „-n“ den gewünschten Namen des Plugins. Werden die beiden Optionen nicht gewählt, so legt das Skript die Ausgabe in demselben Order, wo auch das Skript gestartet wurde, ab. Der Default Name lautet dann „_Heavy“. Mit der Option „-g“ legt man die Zielframeworks fest. In unserem Falle nutzen wir „-g Unity“. Der ausgegebene Ordner beinhaltet alle Build-Projekte und Metadaten, welche zum Kompilieren eines Unity Plugins nötig sind. Nach dem das Skript ohne Fehler terminiert ist, sind die Pure Data Dateien nicht mehr notwendig. Der ausgegebene Ornder beinhaltet Builds für alle von Unity unterstützen Plattformen. Wir nutzen Windows 64 bit und damit den Visual Studio-Build, der im Ausgabeordner unter vs2015 zu finden ist. Das Build-Projekt wird für eine ältere Version von Visual Studio erstellt. Durch die Abwärtskompatibilität von Visual Stuido ist der Build auch für die aktuellste Version ausführbar.
+Beim ausführen des Build-Vorganges werden 3 Dateien erzeugt: „Hv_name_AudioLib.cs“, „Hv_name_AudioLib.dll“ und „Hv_name_Hv_heavy.dll“. „_name“ steht dabei für den mit „-n“ gewählten Namen, wie oben beschrieben.  Die „.cs“ Datei dient zum Ansteuern der der „.dll“ Dateien. Das Skript („.cs“ Datei) beinhaltet verschiedene Methoden zur Verwendung des Audio Plugins. 
+
+Die „Hv_name_AudioLib.cs“ Datei kann nun per Drag and Drop in Unity Objekten eingebunden werden und übernimmt die Funktion eines Audio Listener.
+
 
 
 \end{document}
