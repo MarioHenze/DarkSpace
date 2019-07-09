@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameController : MonoBehaviour
     Tile[,] tiles;
 
     int[] playerTile = new int[2];
+
+    public int score = 0;
 
     [ExecuteInEditMode]
     void OnValidate()
@@ -30,6 +33,7 @@ public class GameController : MonoBehaviour
         else
         {
             _instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -59,6 +63,15 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isOver)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Reset();
+                return;
+            }
+        }
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
 
@@ -104,5 +117,21 @@ public class GameController : MonoBehaviour
         Transform player = PlayerController.Instance.gameObject.transform;
 
         StartCoroutine(AnimationController.Instance.MoveTo(player, player.position, tiles[playerTile[0], playerTile[1]].pos, .2f));
+    }
+
+    bool isOver;
+
+    public void GameOver() {
+        isOver = true;
+        PlayerController.Instance.gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
+    }
+
+    void Reset()
+    {
+        isOver = false;
+        score = 0;
+        PlayerController.Instance.gameObject.SetActive(true);
+        SceneManager.LoadScene("MainScene");
     }
 }

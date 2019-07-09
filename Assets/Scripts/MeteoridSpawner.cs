@@ -70,6 +70,9 @@ public class MeteoridSpawner : MonoBehaviour
             //meteroid.GetComponent<ObstcaleScript>().maxSize = 10/ GameController.Instance.numRows * 0.75f;
 
             nextMeteorid = UnityEngine.Random.Range(spwanTimeMin, spawnTimeMax);
+            spwanTimeMin = Mathf.Clamp(spwanTimeMin - .25f, 1, 10);
+            spawnTimeMax = Mathf.Clamp(spawnTimeMax - .25f, 1, 10);
+            timeToImpact = Mathf.Clamp(timeToImpact - .25f, 1, 10);
         }
     }
 

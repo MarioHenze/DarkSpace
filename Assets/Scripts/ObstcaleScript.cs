@@ -26,6 +26,8 @@ public class ObstcaleScript : MonoBehaviour
         if(transform.position.z < 0)
         {
             GameObject.Destroy(gameObject);
+
+            GameController.Instance.score++;
         }
     }
 
@@ -33,5 +35,7 @@ public class ObstcaleScript : MonoBehaviour
     {
         gameObject.GetComponentInChildren<Renderer>().material = hitMaterial;
         Debug.Log("GAME OVER");
+
+        GameController.Instance.GameOver();
     }
 }

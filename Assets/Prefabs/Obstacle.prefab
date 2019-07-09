@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 6145586912541691646}
   - component: {fileID: 672391892432486174}
   - component: {fileID: 316249900083842461}
-  - component: {fileID: 3310597967133736244}
   - component: {fileID: 7392602550488946718}
+  - component: {fileID: -1329948753617783330}
   m_Layer: 8
   m_Name: Obstacle
   m_TagString: Untagged
@@ -275,24 +275,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3310597967133736244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049249241605622072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec2f4c8c0b6d486e800979b3569b11f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  decayTime: 1
-  metro: 4
-  resonacne: 1
-  soundBar: 1
-  tonOne: 50
-  tonTwo: 40
 --- !u!114 &7392602550488946718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,5 +287,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bad8d265f1b24b6fa6851ddac739f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 3310597967133736244}
+  test: {fileID: 0}
   zPosToAudio: 166169536
+  xPosToAudio: 1274958381
+--- !u!114 &-1329948753617783330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049249241605622072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21efbe6d76687047b9db28a0d1c9bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decayTime: 0
+  metro: 0
+  soundBar: 0.151
+  toneDif: 0
+  toneOne: 0.414
