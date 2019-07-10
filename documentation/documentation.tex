@@ -99,6 +99,10 @@ präziser und schneller wahrgenommen werden können.
 \section{Spielmechanik}
 \label{sec:spielmechanik}
 
+Bei der Überlegung über die Abläufe und Funktionsweise des Spiels, wurden insbesondere Aspekte der Komplexität in Betracht gezogen. Dabei spielte sowohl die Komplexität der Spielmechanik selbst, als auch der Steuerung, sowie der Spielwelt eine Rolle. Dies diente zum einen dazu, die Anforderungen an den Spieler möglichst gering zu halten, andererseits sollten so auch die  Grundlagen geschaffen werden, auf denen weitere Überlegungen zu komplexeren Beziehungen zwischen Soundhinweisen und Spielwelt aufbauen können. 
+
+In dem Spiel steuert der Spieler ein Raumschiff und muss entgegenkommenden Meteoriten ausweichen. Dabei besteht das Spielfeld lediglich aus drei nebeneinander befindlichen Feldern. Der Spielercharakter kann sich in jedem dieser drei Felder aufhalten. Seine Position ändert er über die Pfeiltasten, wird jedoch immer wieder in das mittlere Feld zurückgesetzt, wenn keine Taste gedrückt wird. Dies soll dem Spieler die Orientierung vereinfachen, der ja keinerlei optisches Feedback über die Position seiner Spielfigur erhalten kann. Ist keine Taste gedrückt, weiß der Spieler also, dass sich seine Figur im mittleren Feld befindet. Nun muss der Spieler entgegenkommenden Hindernissen ausweichen. Diese erscheinen zuerst in der Entfernung auf einem der drei Felder und nähern sich dem Raumschiff des Spielers immer weiter an. Um eine Kollision zu vermeiden, muss der Spieler deren Position durch Zuhilfenahme akustischer Hinweise erkennen und sein Raumschiff auf ein Feld manövrieren, welches sicher ist. Mit jedem erfolgreichen Ausweichen eskaliert der Schwierigkeitsgrad und die Zeit, die ein Meteorit vom Erscheinen bis zum Aufprall benötigt, verkürzt sich zunehmend, so dass die Anforderungen an den Spieler immer weiter zunehmen und es schließlich irgendwann dazu kommt, dass der es dem Spieler nicht mehr gelingt auszuweichen. Daraufhin endet das Spiel und dem Spieler wird seine Punktzahl in Form der Anzahl erfolgreich ausgewichener Hindernisse angezeigt.
+
 \section{Pura Data}
 \label{sec:Pure Data}
 
